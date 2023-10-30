@@ -27,9 +27,27 @@ const App = () => {
   );
 
   const handleSquareClick = (clickedSquareIndex) => {
-    alert(clickedSquareIndex);
+    // create a variable holding copy of current state
+    let updatedBoard = [...board];
+    // set condition for if treasure location is same as clicked square's index show a treasure
+    if (clickedSquareIndex === treasureLocation) {
+      // then reassign state value at that index to treasure emoji
+      updatedBoard[clickedSquareIndex] = "💎";
+      // setBoard(updatedBoard)
+    } else if (clickedSquareIndex === bombLocation) {
+      updatedBoard[clickedSquareIndex] = "💣";
+      // setBoard(updatedBoard)
+    } else {
+      // use index to update the current square's value with emoji
+      updatedBoard[clickedSquareIndex] = "🌴";
+      setBoard(updatedBoard);
+      // alert(clickedSquareIndex)
+    }
+    setBoard(updatedBoard);
   };
-
+  const reset = () => {
+    window.location.reload()
+  }
   return (
     <>
       <h1>Treasure Hunt Game</h1>
