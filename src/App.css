@@ -17,3 +17,8 @@ h1 {
   margin: 0 auto;
 }
 
+.button {
+  display: flex;
+    margin: auto;
+  outline: auto;
+}
