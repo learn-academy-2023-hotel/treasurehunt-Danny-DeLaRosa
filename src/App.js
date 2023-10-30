@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+
+import Square from "./components/Square";
+
 import "./App.css";
-import Square from "./components/Square.js";
+
 
 const App = () => {
   const [board, setBoard] = useState([
@@ -15,12 +18,16 @@ const App = () => {
     "?",
   ]);
 
+  const [treasureLocation, setTreasureLocation] = useState(
+    Math.floor(Math.random() * board.length)
+  );
+
+  const [bombLocation, setBombLocation] = useState(
+    Math.floor(Math.random() * board.length)
+  );
+
   const handleSquareClick = (clickedSquareIndex) => {
-    let updatedBoard = [...board]
-    // use the index to update the current square's value with an emoji
-    updatedBoard[clickedSquareIndex] = "🍔"
-    setBoard(updatedBoard)
-    // alert(clickedSquareIndex);
+    alert(clickedSquareIndex);
   };
 
   return (
@@ -37,6 +44,7 @@ const App = () => {
           );
         })}
       </div>
+      <button className="button" onClick={reset}> Play Again </button>
     </>
   );
 };
