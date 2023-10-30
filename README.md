@@ -62,6 +62,8 @@ branch: square-index
 - added SquareClick to app.js and passed it down to square to get the index back to app.js
 
 - As a user, when I click on one of the question marks, a tree emoji appears instead of the alert.
+branch: emoji-icon
+
 - As a user, if I select the winning square, the question mark will become a treasure emoji. If I select the losing square, the question mark will become a bomb emoji.
 - As a user, I can click on a “Play Again” button that will restart the game.
 - As a user, I can see a counter that shows how many guesses are remaining. The counter starts at five and decrements by one every time I click on a square that is neither the treasure nor the bomb.
